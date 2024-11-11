@@ -19,8 +19,9 @@ class _VideoAppState extends State<VideoApp> {
   @override
   void initState() {
     super.initState();
-    _controller = VideoPlayerController.networkUrl(Uri.parse(Url.movie),
-        httpHeaders: headers)
+    _controller = VideoPlayerController.networkUrl(Uri.parse(
+        // Url.movie
+        Url.hls), httpHeaders: headers)
       ..initialize().then((_) {
         // Ensure the first frame is shown after the video is initialized, even before the play button has been pressed.
         setState(() {});
